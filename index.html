@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To My Love</title>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #E6E6FA, #FFFFFF);
+      color: #4B0082;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding-bottom: 60px; /* Added padding to prevent footer overlap */
+      overflow:hidden;
+    }
+    .letter-container {
+      position: relative;
+      width: 90%; /* Adjusted for better responsiveness */
+      max-width: 800px; /* Limits maximum width */
+      height: 60vh; /* Adjusted for better responsiveness */
+      max-height: 500px; /* Limits maximum height */
+      cursor: pointer;
+      perspective: 1000px;
+    }
+    .letter {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      background: #FFFFFF;
+      border: 2px solid #E6E6FA;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .letter.open {
+      transform: rotateY(180deg);
+    }
+    .letter-front, .letter-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px; /* Slightly smaller font size */
+      font-family: 'Dancing Script', cursive;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .letter-front {
+      background: #FFFFFF;
+      color: #4B0082;
+    }
+    .letter-back {
+      background: #FFFFFF;
+      color: #4B0082;
+      transform: rotateY(180deg);
+      text-align: left;
+      line-height: 1.6;
+      overflow-y: auto; /* Adds scroll if text overflows */
+      display: block; /* Changed to block for better text flow */
+      padding: 20px; /* Added padding for better spacing */
+    }
+    .footer {
+      position: fixed; /* Changed to fixed to stay at the bottom */
+      bottom: 0;
+      width: 100%;
+      background: #4B0082;
+      color: #FFFFFF;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="letter-container">
+    <div class="letter" id="letter">
+      <div class="letter-front">
+        💌 Click to Open
+      </div>
+      <div class="letter-back">
+        <p>My Dearest [Her Name],</p>
+        <p>From the moment I met you, my life has been filled with colors I never knew existed. Your smile is my sunshine, your laughter is my favorite melody, and your love is the greatest gift I’ve ever received.</p>
+        <p>Every day with you feels like a new adventure, and I’m so grateful to have you by my side. You inspire me to be the best version of myself, and I promise to cherish and love you with all my heart, today and always.</p>
+        <p>Thank you for being you—my best friend, my partner, and my everything. I love you more than words can ever express.</p>
+        <p>Forever Yours,<br>[Your Name]</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Para sempre seu, Amorzinho.</p>
+  </div>
+
+  <script>
+    const letter = document.getElementById('letter');
+    letter.addEventListener('click', () => {
+      letter.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
